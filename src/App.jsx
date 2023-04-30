@@ -1,40 +1,24 @@
 import React, { useState } from 'react'
-import { Wheel } from 'react-custom-roulette'
+import Ruleta from './components/Ruleta';
+import TextoAbajo from './components/ui/TextoAbajo';
+import Flecha from './components/ui/Flecha';
+import './App.css';
+import Encabezado from './components/ui/Encabezado';
 
-const data = [
-  { option: '0', style: { backgroundColor: 'green', textColor: 'black' } },
-  { option: '1', style: { backgroundColor: 'white' } },
-  { option: '2' },
-]
 
 function App() {
 
-
-
-  const [mustSpin, setMustSpin] = useState(false);
-  const [prizeNumber, setPrizeNumber] = useState(0);
-
-  const handleSpinClick = () => {
-    if (!mustSpin) {
-      const newPrizeNumber = Math.floor(Math.random() * data.length);
-      setPrizeNumber(newPrizeNumber);
-      setMustSpin(true);
-    }
-  }
-
   return (
-    <>
-      <Wheel
-        mustStartSpinning={mustSpin}
-        prizeNumber={prizeNumber}
-        data={data}
+    <div className='tablet'>
+      <div className="arriba">
+        <Encabezado className="encabezado" />
+      </div>
+      <div className="abajo">
+        <Ruleta />
+        <TextoAbajo className="texto_abajo" />
+      </div>
 
-        onStopSpinning={() => {
-          setMustSpin(false);
-        }}
-      />
-      <button onClick={handleSpinClick}>SPIN</button>
-    </>
+    </div>
   );
 }
 
