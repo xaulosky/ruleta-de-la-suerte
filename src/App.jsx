@@ -14,10 +14,13 @@ function App() {
         <Encabezado className="encabezado" />
       </div>
       <div className="abajo">
-        <Ruleta />
-        <TextoAbajo className="texto_abajo" />
+        <div className="contenedor_ruleta">
+          <Ruleta />
+        </div>
+        <div className="texto_abajo">
+          <TextoAbajo className="" />
+        </div>
       </div>
-
     </div>
   );
 }
