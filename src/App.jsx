@@ -7,7 +7,6 @@ import Encabezado from './components/ui/Encabezado';
 
 
 function App() {
-
   return (
     <div className='tablet'>
       <div className="arriba">

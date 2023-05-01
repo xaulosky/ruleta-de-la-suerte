@@ -46,11 +46,10 @@ const Ruleta = () => {
           src: flechita,
           style: {
             position: 'absolute',
-            top: '13px',
+            top: '2%',
             left: '50%',
             transform: 'translateX(-50%)',
-            width: '28px',
-            height: '75px',
+            width: '6%',
           }
         }}
         data={data}

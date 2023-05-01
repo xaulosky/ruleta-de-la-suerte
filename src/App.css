@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Univers Next";
-  src: url("./fonts/Univers\ Next\ Pro\ ExtraBlack\ Extended.ttf");
+  src: url("./assets/fonts/Univers\ Next\ Pro\ ExtraBlack\ Extended.ttf");
 }
 * {
   --fuente-principal: "Univers Next";
@@ -8,33 +8,36 @@
 html {
   font-family: "Univers Next" !important;
 }
-
+body {
+}
 .tablet {
+  margin: 0 auto;
   width: 100%;
   height: 100%;
   max-width: 720px;
   max-height: 1280px;
 }
 .arriba {
-  height: 380px;
+  max-height: 380px;
+  height: 30vh;
   background-color: #dd5114;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .abajo {
-  height: 900px;
+  max-height: 900px;
+  height: 70vh;
   background-color: #eee9dd;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
-
 .encabezado {
- width: 460px;
+  width: 460px;
+  max-width: 75%;
 }
-
 .texto_abajo {
   width: 70%;
   position: absolute;
@@ -47,8 +50,8 @@ html {
   flex-direction: column;
   height: 90%;
   width: 100%;
+  padding-bottom: 70px;
 }
-
 .boton {
   position: absolute;
   margin-left: auto;
@@ -56,13 +59,13 @@ html {
   left: 0;
   right: 0;
   text-align: center;
-  width: 90px;
+  max-width: 90px;
+  width: 12%;
   z-index: 99;
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-
 .bhdLno {
   max-width: 623px !important;
   max-height: 623px !important;
