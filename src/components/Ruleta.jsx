@@ -1,33 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Wheel } from 'react-custom-roulette'
 import flechita from '../assets/flechita.png';
 import botoncentrado from '../assets/botoncentra.png';
-
+import Modal from './Modal';
 
 const data = [
   { option: 'BOTELLA', },
-  { option: 'SIGAPARTICIPANDO', },
-  { option: '2' },
+  { option: 'SIGA PARTICIPANDO', },
+  { option: 'comida' },
   { option: 'LLAVERO' },
-  { option: '4' },
+  { option: 'SIGAPARTICIPANDO' },
   { option: 'STICKER' },
-  { option: '6' },
+  { option: 'SIGAPARTICIPANDO' },
   { option: 'POSTAL' },
-  { option: '8' },
+  { option: 'SIGAPARTICIPANDO' },
+  { option: 'SIGAPARTICIPANDO' },
+
 ]
+
 const Ruleta = () => {
-  const [ganador, setGanador] = useState();
+  const [ganador, setGanador] = useState('');
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
+
+  const [showModal, setShowModal] = useState(false);
+
 
   const handleSpinClick = () => {
     if (!mustSpin) {
       const newPrizeNumber = Math.floor(Math.random() * data.length);
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
-      setGanador(newPrizeNumber - 1);
+      setGanador(newPrizeNumber - 1)
     }
   }
+
 
   return (
     <>
@@ -41,7 +48,7 @@ const Ruleta = () => {
         innerBorderColor={["#f2f2f2"]}
         radiusLineColor={["tranparent"]}
         radiusLineWidth={[1]}
-        fontSize={30}
+        fontSize={10}
         pointerProps={{
           src: flechita,
           style: {
@@ -55,9 +62,12 @@ const Ruleta = () => {
         data={data}
         onStopSpinning={() => {
           setMustSpin(false);
+          setShowModal(true);
         }}
       />
       <img src={botoncentrado} onClick={handleSpinClick} className='boton' alt="boton" />
+      <Modal showModal={showModal} setShowModal={setShowModal} ganador={data[ganador]} />
+
     </>
   );
 }

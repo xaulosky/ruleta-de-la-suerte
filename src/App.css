@@ -8,42 +8,82 @@
 html {
   font-family: "Univers Next" !important;
 }
-body {
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
+/* transform px to em */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fuente-principal);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .tablet {
   margin: 0 auto;
   width: 100%;
-  height: 100%;
-  max-width: 720px;
-  max-height: 1280px;
+  height: 100vh;
+  background-image: url("./assets/fonhdo.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
 }
 .arriba {
-  max-height: 380px;
-  height: 30vh;
-  background-color: #dd5114;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .abajo {
-  max-height: 900px;
-  height: 70vh;
-  background-color: #eee9dd;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
-.encabezado {
-  width: 460px;
-  max-width: 75%;
+
+.imagen1 {
+  width: 20em;
+  margin-bottom: 40px;
 }
-.texto_abajo {
-  width: 70%;
-  position: absolute;
-  bottom: 50px;
+.imagen2 {
+  width: 90%;
 }
+.logos {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.logos img {
+  width: 100%;
+  max-width: 10em;
+  margin: 0 10px;
+}
+
 .contenedor_ruleta {
+  position: relative;
+  margin-top: -7em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,6 +92,7 @@ body {
   width: 100%;
   padding-bottom: 70px;
 }
+
 .boton {
   position: absolute;
   margin-left: auto;
@@ -66,7 +107,54 @@ body {
   border: none;
   cursor: pointer;
 }
+
 .bhdLno {
   max-width: 623px !important;
   max-height: 623px !important;
 }
+
+.texto_abajo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+  z-index: 99;
+}
+
+.pie {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  max-width: 50%;
+  margin: 0 auto;
+  z-index: 99;
+}
+.pie img {
+  width: 100%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal-content {
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+/* styles modal for the winner */
+

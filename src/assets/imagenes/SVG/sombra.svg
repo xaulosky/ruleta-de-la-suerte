@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1645.49 1662.75">
+  <defs>
+    <style>
+      .cls-1 {
+        mix-blend-mode: multiply;
+        opacity: .7;
+      }
+
+      .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+
+      .cls-6 {
+        fill: url(#Degradado_sin_nombre);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-5" width="1645.49" height="1662.75"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <path class="cls-5" d="M19.14,831.38c0,443.82,359.79,803.61,803.6,803.61s803.61-359.79,803.61-803.61S1266.56,27.77,822.75,27.77,19.14,387.56,19.14,831.38"/>
+    </clipPath>
+    <radialGradient id="Degradado_sin_nombre" data-name="Degradado sin nombre" cx="-999.19" cy="1106.5" fx="-999.19" fy="1106.5" r="2.83" gradientTransform="translate(286870.76 -320008.05) scale(286.28 289.96)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".8" stop-color="#fff"/>
+      <stop offset=".88" stop-color="#fdfdfd"/>
+      <stop offset=".9" stop-color="#f6f6f6"/>
+      <stop offset=".92" stop-color="#eaeaea"/>
+      <stop offset=".94" stop-color="#d9d9d9"/>
+      <stop offset=".95" stop-color="#c3c3c3"/>
+      <stop offset=".96" stop-color="#a8a8a8"/>
+      <stop offset=".97" stop-color="#878787"/>
+      <stop offset=".98" stop-color="#626262"/>
+      <stop offset=".99" stop-color="#373737"/>
+      <stop offset="1" stop-color="#090909"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <g class="cls-2">
+    <g id="Capa_2" data-name="Capa 2">
+      <g id="Capa_1-2" data-name="Capa 1">
+        <g class="cls-1">
+          <g class="cls-4">
+            <g class="cls-3">
+              <rect class="cls-6" x="19.14" y="27.77" width="1607.21" height="1607.21"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
