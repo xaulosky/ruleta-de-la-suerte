@@ -64,11 +64,11 @@ img {
 }
 
 .imagen1 {
-  width: 20em;
+  width: 15em;
   margin-bottom: 40px;
 }
 .imagen2 {
-  width: 90%;
+  width: 80%;
 }
 .logos {
   display: flex;
