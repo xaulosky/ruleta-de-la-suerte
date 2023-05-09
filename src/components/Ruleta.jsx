@@ -6,6 +6,8 @@ import Modal from './Modal';
 import useStorePremios from '../store/storePremios';
 
 import sombra from '../assets/imagenes/1000w/sombra.png';
+import sonidoruleta from '../assets/sonidos/sonidoruleta.mp3';
+import click from '../assets/sonidos/click.mp3';
 
 
 
@@ -26,6 +28,11 @@ const Ruleta = () => {
     return [...acc, curr, { option: /* siga participando con salto de lina */ 'SIGA PARTICIPANDO' }]
   }, [])
 
+
+  const audio = new Audio(sonidoruleta);
+  const sonidoclick = new Audio(click);
+
+
   /* newPrizeNumber - 1 no deve ser SIGA PARTICIPANDO */
   const handleSpinClick = () => {
     if (comprobarCantidadTotal() <= 0) {
@@ -37,6 +44,7 @@ const Ruleta = () => {
       let newPrizeNumber = 2;
       do {
         newPrizeNumber = Math.floor(Math.random() * (premiosOptions.length + 1));
+        console.log(premiosOptions[newPrizeNumber - 1].option)
       } while (premiosOptions[newPrizeNumber - 1].option === 'SIGA PARTICIPANDO' || validarExistencia(newPrizeNumber) || newPrizeNumber == 0);
 
       /* validar que la cantidad del premio no sea cero recuerda que el premiosOptions tiene mas valores */
@@ -90,6 +98,7 @@ const Ruleta = () => {
 
   return (
     <>
+
       <img src={flechita} className='flechita' alt="" style={{
         position: 'absolute',
         top: '1.7%',

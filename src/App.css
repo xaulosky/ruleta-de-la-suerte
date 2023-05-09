@@ -129,6 +129,10 @@ img {
   cursor: pointer;
   /* sombra circular negra suabe*/
   filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.7));
+  transition: all 0.3s ease-in-out;
+}
+.boton:active {
+  width: 11%;
 }
 
 .bhdLno {
