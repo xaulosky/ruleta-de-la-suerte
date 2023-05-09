@@ -7,13 +7,17 @@ const Modal = ({ showModal, setShowModal, ganador }) => {
     return (
         <div className="modal  animate__animated animate__fadeIn">
             <div className="modal-content">
-                <h1>¡Felicitaciones!</h1>
-                <p>¡Has ganado!</p>
+                <h1 style={{
+                    marginBottom: '0px !important',
+                }}>¡FELICITACIONES!</h1>
+                <p>¡GANASTE!</p>
+                <p>TU PREMIO ES:</p>
                 <p style={{
                     fontSize: '2.5rem',
                     fontWeight: 'bold',
 
                 }}>{ganador.option}</p>
+                
                 <button onClick={() => setShowModal(false)}
                     style={{
                         backgroundColor: '#dd5114',

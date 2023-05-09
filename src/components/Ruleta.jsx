@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Wheel } from 'react-custom-roulette'
 import flechita from '../assets/flechita.png';
-import botoncentrado from '../assets/botoncentra.png';
+import botoncentrado from '../assets/imagenes/1000w/botoncito.png';
 import Modal from './Modal';
 import useStorePremios from '../store/storePremios';
 
@@ -23,7 +23,7 @@ const Ruleta = () => {
   const premiosOptions = premios.map((premio) => {
     return { option: premio.nombre }
   }).reduce((acc, curr) => {
-    return [...acc, curr, { option: 'SIGA PARTICIPANDO' }]
+    return [...acc, curr, { option: /* siga participando con salto de lina */ '\nSIGA PARTICIPANDO' }]
   }, [])
 
   /* newPrizeNumber - 1 no deve ser SIGA PARTICIPANDO */
@@ -90,10 +90,25 @@ const Ruleta = () => {
 
   return (
     <>
+      <img src={flechita} className='flechita' alt="" style={{
+        position: 'absolute',
+        top: '1.7%',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '5%',
+        zIndex: 99
+
+      }}
+      />
+      <img src={sombra} className='sombra' alt="" style={{
+       
+
+      }} />
       <Wheel
         mustStartSpinning={mustSpin}
         prizeNumber={prizeNumber}
         backgroundColors={['#dd5114', '#eeee']}
+        textColors={['#ffffff', '#000000']}
         outerBorderColor={["#22130D"]}
         outerBorderWidth={[20]}
         innerBorderColor={["#f2f2f2"]}
@@ -104,12 +119,7 @@ const Ruleta = () => {
         pointerProps={{
           src: flechita,
           style: {
-            position: 'absolute',
-            top: '2%',
-            left: '50%',
-            transform: 'rotate(5deg)',
-            width: '6%',
-            zIndex: 9999
+            display: 'none'
           }
         }}
         data={premiosOptions}
@@ -120,7 +130,7 @@ const Ruleta = () => {
         spinDuration={0.8}
         textDistance={55}
       />
-      <img src={botoncentrado} onClick={handleSpinClick} className='boton' alt="boton"  />
+      <img src={botoncentrado} onClick={handleSpinClick} className='boton' alt="boton" />
       <Modal showModal={showModal} setShowModal={setShowModal} ganador={premiosOptions[ganador]} />
 
     </>
