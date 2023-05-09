@@ -7,6 +7,12 @@
   font-display: swap;
 }
 
+
+:root {
+  touch-action: pan-x pan-y;
+  height: 100% 
+}
+
 html {
   font-family: "Univers Next Pro XBlack Ext" !important;
 }
