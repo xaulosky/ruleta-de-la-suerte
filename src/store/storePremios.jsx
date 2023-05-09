@@ -58,7 +58,12 @@ const useStorePremios = create((set, get) => ({
     setPremiosLocalStorage: (premios) => {
         localStorage.setItem('premios', JSON.stringify(premios))
         set({ premios })
+    },
+    resetTodosLosPremios: () => {
+        localStorage.setItem('premios', JSON.stringify(premios))
+        set({ premios })
     }
+
 }));
 
 export default useStorePremios;

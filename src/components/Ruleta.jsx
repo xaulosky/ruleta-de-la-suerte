@@ -5,6 +5,8 @@ import botoncentrado from '../assets/botoncentra.png';
 import Modal from './Modal';
 import useStorePremios from '../store/storePremios';
 
+import sombra from '../assets/imagenes/1000w/sombra.png';
+
 
 const Ruleta = () => {
   const [ganador, setGanador] = useState('');
@@ -106,6 +108,7 @@ const Ruleta = () => {
             left: '50%',
             transform: 'rotate(5deg)',
             width: '6%',
+            zIndex: 9999
           }
         }}
         data={premiosOptions}

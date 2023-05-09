@@ -205,6 +205,12 @@ img:focus:not(.focus-visible) {
   outline: none !important;
 }
 
-.sc-gsTCUz.bhdLno{
+.sc-gsTCUz.bhdLno {
   transform: rotate(-5deg);
+}
+
+.opciones {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.5;
 }
