@@ -8,6 +8,7 @@ import useStorePremios from '../store/storePremios';
 import sombra from '../assets/imagenes/1000w/sombra.png';
 
 
+
 const Ruleta = () => {
   const [ganador, setGanador] = useState('');
   const [mustSpin, setMustSpin] = useState(false);
@@ -116,10 +117,10 @@ const Ruleta = () => {
           setMustSpin(false);
           setShowModal(true);
         }}
-        spinDuration={0.2}
+        spinDuration={0.8}
         textDistance={55}
       />
-      <img src={botoncentrado} onClick={handleSpinClick} className='boton' alt="boton" />
+      <img src={botoncentrado} onClick={handleSpinClick} className='boton' alt="boton"  />
       <Modal showModal={showModal} setShowModal={setShowModal} ganador={premiosOptions[ganador]} />
 
     </>
