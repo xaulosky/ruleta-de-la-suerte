@@ -25,9 +25,11 @@ const Ruleta = () => {
 
   /* newPrizeNumber - 1 no deve ser SIGA PARTICIPANDO */
   const handleSpinClick = () => {
-
-
-    if (!mustSpin) {
+    if (comprobarCantidadTotal() <= 0) {
+      alert("premios agotados")
+      return;
+    }
+    else if (!mustSpin) {
 
       let newPrizeNumber = 2;
       do {
@@ -61,20 +63,18 @@ const Ruleta = () => {
         return;
       }
     }
-
-    console.log(premios)
   }
 
   const validarExistencia = (newPrizeNumber) => {
-    premios.map((premio, index) => {
-      if (premio.nombre === premiosOptions[newPrizeNumber - 1].option) {
-        if (premio.cantidad != 0) {
-          return true
-        } else {
-          false
-        }
-      }
-    })
+    const premio = premios.find((premio) => premio.nombre === premiosOptions[newPrizeNumber - 1].option);
+    return premio && premio.cantidad <= 0;
+  }
+
+  const comprobarCantidadTotal = () => {
+    const cantidadTotal = premios.reduce((acc, curr) => {
+      return acc + curr.cantidad
+    }, 0)
+    return cantidadTotal;
   }
 
 
@@ -113,7 +113,7 @@ const Ruleta = () => {
           setMustSpin(false);
           setShowModal(true);
         }}
-        spinDuration={0.8}
+        spinDuration={0.2}
         textDistance={55}
       />
       <img src={botoncentrado} onClick={handleSpinClick} className='boton' alt="boton" />
