@@ -42,24 +42,27 @@ const Ruleta = () => {
     else if (!mustSpin) {
 
       let newPrizeNumber = 2;
+
       do {
-        newPrizeNumber = Math.floor(Math.random() * (premiosOptions.length + 1));
-        console.log(premiosOptions[newPrizeNumber - 1].option)
-      } while (premiosOptions[newPrizeNumber - 1].option === 'SIGA PARTICIPANDO' || validarExistencia(newPrizeNumber) || newPrizeNumber == 0);
+        newPrizeNumber = Math.floor(Math.random() * (premiosOptions.length));
+        console.log(premiosOptions[newPrizeNumber].option)
+
+      } while (premiosOptions[newPrizeNumber].option === 'SIGA PARTICIPANDO' || validarExistencia(newPrizeNumber) || newPrizeNumber == 0);
+
 
       /* validar que la cantidad del premio no sea cero recuerda que el premiosOptions tiene mas valores */
 
 
       setPremios(premios.map((premio, index) => {
-        if (premio.nombre === premiosOptions[newPrizeNumber - 1].option) {
-          return { ...premio, cantidad: premio.cantidad - 1 }
+        if (premio.nombre === premiosOptions[newPrizeNumber].option) {
+          return { ...premio, cantidad: premio.cantidad }
         }
         return premio
       }))
 
       setPremiosLocalStorage(premios.map((premio, index) => {
-        if (premio.nombre === premiosOptions[newPrizeNumber - 1].option) {
-          return { ...premio, cantidad: premio.cantidad - 1 }
+        if (premio.nombre === premiosOptions[newPrizeNumber].option) {
+          return { ...premio, cantidad: premio.cantidad }
         }
         return premio
       }))
@@ -67,7 +70,7 @@ const Ruleta = () => {
 
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
-      setGanador(newPrizeNumber - 1)
+      setGanador(newPrizeNumber)
       /* comprueba si la cantidad de todos los premios es cero muestra de premios agotados */
       if (premios.every(premio => premio.cantidad === 0)) {
         alert("premios agotados")
@@ -77,7 +80,7 @@ const Ruleta = () => {
   }
 
   const validarExistencia = (newPrizeNumber) => {
-    const premio = premios.find((premio) => premio.nombre === premiosOptions[newPrizeNumber - 1].option);
+    const premio = premios.find((premio) => premio.nombre === premiosOptions[newPrizeNumber].option);
     return premio && premio.cantidad <= 0;
   }
 
@@ -126,15 +129,14 @@ const Ruleta = () => {
         fontSize={10}
         fontFamily='Univers Next Pro XBlack Ext'
         pointerProps={{
-          src: flechita,
           style: {
             display: 'none'
           }
         }}
         data={premiosOptions}
         onStopSpinning={() => {
-          setMustSpin(false);
-          setShowModal(true);
+          setMustSpin(false)
+          setShowModal(true)
         }}
         spinDuration={0.8}
         textDistance={55}
