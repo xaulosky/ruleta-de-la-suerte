@@ -1,14 +1,21 @@
 @font-face {
-  font-family: "Univers Next";
-  src: url("./assets/fonts/Univers\ Next\ Pro\ ExtraBlack\ Extended.ttf");
-}
-* {
-  --fuente-principal: "Univers Next";
-}
-html {
-  font-family: "Univers Next" !important;
+  font-family: "Univers Next Pro XBlack Ext";
+  src: url("../public/fonts/UniversNextPro-XBlackExt.woff2") format("woff2"),
+    url("../public/fonts/UniversNextPro-XBlackExt.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
+
+html {
+  font-family: "Univers Next Pro XBlack Ext" !important;
+}
+/* evite zoom */
+@viewport {
+  zoom: 1;
+  width: extend-to-zoom;
+}
 *,
 *::before,
 *::after {
@@ -159,3 +166,14 @@ img {
 }
 /* styles modal for the winner */
 
+
+.react-custom-roulette__outer {
+  position: relative;
+}
+
+.react-custom-roulette__outer .react-custom-roulette__marker {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}

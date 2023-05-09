@@ -7,7 +7,7 @@ const Modal = ({ showModal, setShowModal, ganador }) => {
         <div className="modal">
             <div className="modal-content">
                 <h2>Felicitaciones!</h2>
-                <p>Has ganado!</p>
+                <p>Has ganado un {ganador.option}!</p>
                 <button onClick={() => setShowModal(false)}>Cerrar</button>
             </div>
         </div>
