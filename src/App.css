@@ -65,8 +65,21 @@ img {
   margin-bottom: 0px !important;
   margin-top: 0px !important;
 }
-.modal p{
+.modal p {
   font-size: 2em;
+}
+
+/* tamaños texto celular */
+@media (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+  .modal h1 {
+    font-size: 3.5em !important;
+  }
+  .modal p {
+    font-size: 1.5em;
+  }
 }
 
 .tablet {
