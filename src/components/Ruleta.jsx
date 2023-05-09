@@ -29,7 +29,7 @@ const Ruleta = () => {
   const handleSpinClick = () => {
     if (!mustSpin) {
 
-      let newPrizeNumber = 1;
+      let newPrizeNumber = 2;
       do {
         newPrizeNumber = Math.floor(Math.random() * premiosOptions.length);
       } while (premiosOptions[newPrizeNumber - 1].option === 'SIGA PARTICIPANDO' || premios[newPrizeNumber - 1].cantidad === 0);

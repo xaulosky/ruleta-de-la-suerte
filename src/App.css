@@ -7,7 +7,6 @@
   font-display: swap;
 }
 
-
 html {
   font-family: "Univers Next Pro XBlack Ext" !important;
 }
@@ -77,6 +76,7 @@ img {
 .imagen2 {
   width: 80%;
 }
+
 .logos {
   display: flex;
   width: 100%;
@@ -89,6 +89,8 @@ img {
   margin: 0 10px;
 }
 
+
+
 .contenedor_ruleta {
   position: relative;
   margin-top: -7em;
@@ -100,7 +102,25 @@ img {
   width: 100%;
   padding-bottom: 70px;
 }
-
+@media (max-width: 400px) {
+  .imagen1 {
+    width: 10em;
+    margin-bottom: 20px;
+  }
+  .imagen2 {
+    width: 80%;
+  }
+  .logos img {
+    max-width: 5em;
+  }
+  .tablet{
+    padding: 20px;
+  }
+  .contenedor_ruleta{
+    margin-top: -2em;
+  }
+  
+}
 .boton {
   position: absolute;
   margin-left: auto;
@@ -165,7 +185,6 @@ img {
   text-align: center;
 }
 /* styles modal for the winner */
-
 
 .react-custom-roulette__outer {
   position: relative;
