@@ -7,6 +7,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Palatino Nova";
+  src: url("../src/assets/fonts/PalatinoNova-Regular.woff2") format("woff2"),
+    url("../src/assets/fonts/PalatinoNova-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   touch-action: pan-x pan-y;
   height: 100%;
@@ -15,11 +24,13 @@
 html {
   font-family: "Univers Next Pro XBlack Ext" !important;
 }
+
 /* evite zoom */
 @viewport {
   zoom: 1;
   width: extend-to-zoom;
 }
+
 *,
 *::before,
 *::after {
@@ -47,6 +58,15 @@ body {
 img {
   max-width: 100%;
   height: auto;
+}
+.modal h1 {
+  margin: 0;
+  font-size: 4.5em !important;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+.modal p{
+  font-size: 2em;
 }
 
 .tablet {
@@ -79,14 +99,14 @@ img {
   height: 12vh;
 }
 .imagen2 {
-  height: 8vh;
+  height: 7vh;
 }
 
 .logos {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  margin-bottom: -7vh;
+  margin-bottom: -8vh;
 }
 
 .logos img {
@@ -176,7 +196,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 999;
 }
 
@@ -230,4 +250,8 @@ img:focus:not(.focus-visible) {
   transform: translateX(-50%);
   width: 5%;
   z-index: 99;
+}
+
+.modal {
+  font-family: "Palatino Nova" !important;
 }

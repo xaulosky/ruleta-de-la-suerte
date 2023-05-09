@@ -10,14 +10,15 @@ const Modal = ({ showModal, setShowModal, ganador }) => {
                 <h1 style={{
                     marginBottom: '0px !important',
                 }}>¡FELICITACIONES!</h1>
-                <p>¡GANASTE!</p>
-                <p>TU PREMIO ES:</p>
+                <h1>¡GANASTE!</h1>
+                <p>Tu premio es:</p>
                 <p style={{
-                    fontSize: '2.5rem',
+                    fontSize: '3rem',
                     fontWeight: 'bold',
+                    letterSpacing: '3px',
 
                 }}>{ganador.option}</p>
-                
+
                 <button onClick={() => setShowModal(false)}
                     style={{
                         backgroundColor: '#dd5114',
