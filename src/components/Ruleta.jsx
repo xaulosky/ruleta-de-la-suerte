@@ -23,7 +23,7 @@ const Ruleta = () => {
   const premiosOptions = premios.map((premio) => {
     return { option: premio.nombre }
   }).reduce((acc, curr) => {
-    return [...acc, curr, { option: /* siga participando con salto de lina */ '\nSIGA PARTICIPANDO' }]
+    return [...acc, curr, { option: /* siga participando con salto de lina */ 'SIGA PARTICIPANDO' }]
   }, [])
 
   /* newPrizeNumber - 1 no deve ser SIGA PARTICIPANDO */
@@ -101,7 +101,7 @@ const Ruleta = () => {
       }}
       />
       <img src={sombra} className='sombra' alt="" style={{
-       
+
 
       }} />
       <Wheel
