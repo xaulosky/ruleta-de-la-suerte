@@ -27,12 +27,17 @@ const Ruleta = () => {
 
   /* newPrizeNumber - 1 no deve ser SIGA PARTICIPANDO */
   const handleSpinClick = () => {
+
+
     if (!mustSpin) {
 
       let newPrizeNumber = 2;
       do {
-        newPrizeNumber = Math.floor(Math.random() * premiosOptions.length);
-      } while (premiosOptions[newPrizeNumber - 1].option === 'SIGA PARTICIPANDO' || premios[newPrizeNumber - 1].cantidad === 0);
+        newPrizeNumber = Math.floor(Math.random() * (premiosOptions.length + 1));
+      } while (premiosOptions[newPrizeNumber - 1].option === 'SIGA PARTICIPANDO' || validarExistencia(newPrizeNumber) || newPrizeNumber == 0);
+
+      /* validar que la cantidad del premio no sea cero recuerda que el premiosOptions tiene mas valores */
+
 
       setPremios(premios.map((premio, index) => {
         if (premio.nombre === premiosOptions[newPrizeNumber - 1].option) {
@@ -44,10 +49,28 @@ const Ruleta = () => {
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
       setGanador(newPrizeNumber - 1)
-      console.log(premios)
-
+      /* comprueba si la cantidad de todos los premios es cero muestra de premios agotados */
+      if (premios.every(premio => premio.cantidad === 0)) {
+        alert("premios agotados")
+        return;
+      }
     }
+
+    console.log(premios)
   }
+
+  const validarExistencia = (newPrizeNumber) => {
+    premios.map((premio, index) => {
+      if (premio.nombre === premiosOptions[newPrizeNumber - 1].option) {
+        if (premio.cantidad != 0) {
+          return true
+        } else {
+          false
+        }
+      }
+    })
+  }
+
 
 
   useEffect(() => {
@@ -65,7 +88,7 @@ const Ruleta = () => {
         outerBorderColor={["#22130D"]}
         outerBorderWidth={[20]}
         innerBorderColor={["#f2f2f2"]}
-        radiusLineColor={["tranparent"]}
+        radiusLineColor={["transparent"]}
         radiusLineWidth={[1]}
         fontSize={10}
         fontFamily='Univers Next Pro XBlack Ext'
@@ -75,7 +98,7 @@ const Ruleta = () => {
             position: 'absolute',
             top: '2%',
             left: '50%',
-            transform: 'translateX(-50%)',
+            transform: 'rotate(5deg)',
             width: '6%',
           }
         }}

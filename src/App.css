@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Univers Next Pro XBlack Ext";
-  src: url("../public/fonts/UniversNextPro-XBlackExt.woff2") format("woff2"),
-    url("../public/fonts/UniversNextPro-XBlackExt.woff") format("woff");
+  src: url("../src/assets/fonts/UniversNextPro-XBlackExt.woff2") format("woff2"),
+    url("../src/assets/fonts/UniversNextPro-XBlackExt.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -89,8 +89,6 @@ img {
   margin: 0 10px;
 }
 
-
-
 .contenedor_ruleta {
   position: relative;
   margin-top: -7em;
@@ -113,13 +111,12 @@ img {
   .logos img {
     max-width: 5em;
   }
-  .tablet{
+  .tablet {
     padding: 20px;
   }
-  .contenedor_ruleta{
+  .contenedor_ruleta {
     margin-top: -2em;
   }
-  
 }
 .boton {
   position: absolute;
@@ -186,13 +183,28 @@ img {
 }
 /* styles modal for the winner */
 
-.react-custom-roulette__outer {
-  position: relative;
+img:active {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  outline: none;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
-.react-custom-roulette__outer .react-custom-roulette__marker {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove outline for non-keyboard :focus */
+img:focus:not(.focus-visible) {
+  outline: none !important;
+}
+
+.sc-gsTCUz.bhdLno{
+  transform: rotate(-5deg);
 }

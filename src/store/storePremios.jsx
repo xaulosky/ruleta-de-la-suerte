@@ -46,7 +46,7 @@ const useStorePremios = create((set, get) => ({
             return premio;
         })
     })),
-    getPremio: (id) => set((state) => state.premios.find(premio => premio.id === id))
+    getPremio: (id) => set((state) => state.premios.find(premio => premio.id === id)),
 }));
 
 export default useStorePremios;
