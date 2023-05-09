@@ -15,15 +15,13 @@ const Ruleta = () => {
 
   const premios = useStorePremios(state => state.premios);
   const setPremios = useStorePremios(state => state.setPremios);
+  const setPremiosLocalStorage = useStorePremios(state => state.setPremiosLocalStorage);
   /* convierte los nombres de los premios en options en un nuevo array y agrega un siga entre cada uno participando */
   const premiosOptions = premios.map((premio) => {
     return { option: premio.nombre }
   }).reduce((acc, curr) => {
     return [...acc, curr, { option: 'SIGA PARTICIPANDO' }]
   }, [])
-
-  console.log(premiosOptions)
-
 
   /* newPrizeNumber - 1 no deve ser SIGA PARTICIPANDO */
   const handleSpinClick = () => {
@@ -45,6 +43,14 @@ const Ruleta = () => {
         }
         return premio
       }))
+
+      setPremiosLocalStorage(premios.map((premio, index) => {
+        if (premio.nombre === premiosOptions[newPrizeNumber - 1].option) {
+          return { ...premio, cantidad: premio.cantidad - 1 }
+        }
+        return premio
+      }))
+
 
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
@@ -107,6 +113,8 @@ const Ruleta = () => {
           setMustSpin(false);
           setShowModal(true);
         }}
+        spinDuration={0.8}
+        textDistance={55}
       />
       <img src={botoncentrado} onClick={handleSpinClick} className='boton' alt="boton" />
       <Modal showModal={showModal} setShowModal={setShowModal} ganador={premiosOptions[ganador]} />

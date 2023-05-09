@@ -29,24 +29,36 @@ const premios = [
     }
 ]
 
+
+
+/* consulta el dia mes y año, si no existe lo crea y si existe y es distinta a la actual crea los premios en local storage */
+const fecha = new Date();
+const dia = fecha.getDate();
+const mes = fecha.getMonth() + 1;
+const año = fecha.getFullYear();
+
+const fechaActual = `${dia}/${mes}/${año}`
+const fechaLocalStorage = localStorage.getItem('fecha')
+
+if (fechaLocalStorage === null) {
+    localStorage.setItem('fecha', fechaActual)
+    localStorage.setItem('premios', JSON.stringify(premios))
+} else if (fechaLocalStorage !== fechaActual) {
+    localStorage.setItem('fecha', fechaActual)
+    localStorage.setItem('premios', JSON.stringify(premios))
+}
+
+
+
 /* esta store setea los premios en localstorage y trabaja con ellos desde ahi */
+
 const useStorePremios = create((set, get) => ({
-    premios: JSON.parse(localStorage.getItem('premios')) || premios,
+    premios: JSON.parse(localStorage.getItem('premios')),
     setPremios: (premios) => set({ premios }),
-    addPremio: (premio) => set((state) => ({ premios: [...state.premios, premio] })),
-    removePremio: (id) => set((state) => ({ premios: state.premios.filter(premio => premio.id !== id) })),
-    updatePremio: (id, premio) => set((state) => ({
-        premios: state.premios.map((premio) => {
-            if (premio.id === id) {
-                return {
-                    ...premio,
-                    ...premio,
-                };
-            }
-            return premio;
-        })
-    })),
-    getPremio: (id) => set((state) => state.premios.find(premio => premio.id === id)),
+    setPremiosLocalStorage: (premios) => {
+        localStorage.setItem('premios', JSON.stringify(premios))
+        set({ premios })
+    }
 }));
 
 export default useStorePremios;
