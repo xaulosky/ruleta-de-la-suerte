@@ -98,6 +98,10 @@ const Ruleta = () => {
       setShowModal(true);
     }
   }, [premios])
+  
+  useEffect(() => {
+    localStorage.setItem('premios', JSON.stringify(premios));
+  }, [premios])
 
   return (
     <>
