@@ -23,9 +23,12 @@ const Ruleta = () => {
   const setPremiosLocalStorage = useStorePremios(state => state.setPremiosLocalStorage);
   /* convierte los nombres de los premios en options en un nuevo array y agrega un siga entre cada uno participando */
   const premiosOptions = premios.map((premio) => {
-    return { option: premio.nombre }
+    return { option: premio.nombre, style: { fontSize: 17}}
   }).reduce((acc, curr) => {
-    return [...acc, curr, { option: /* siga participando con salto de lina */ 'SIGA PARTICIPANDO' }]
+    return [...acc, curr, { option: /* siga participando con salto de lina */ 'SIGA PARTICIPANDO' , style: {
+      fontSize:10,
+      
+    } }]
   }, [])
 
 
@@ -128,7 +131,6 @@ const Ruleta = () => {
         innerBorderColor={["#f2f2f2"]}
         radiusLineColor={["transparent"]}
         radiusLineWidth={[1]}
-        fontSize={10}
         fontFamily='Univers Next Pro XBlack Ext'
         pointerProps={{
           style: {
