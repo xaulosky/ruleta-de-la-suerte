@@ -61,6 +61,7 @@ const Ruleta = () => {
       }))
 
 
+
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
       setGanador(newPrizeNumber)
