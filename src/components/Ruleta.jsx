@@ -55,14 +55,7 @@ const Ruleta = () => {
 
       setPremios(premios.map((premio, index) => {
         if (premio.nombre === premiosOptions[newPrizeNumber].option) {
-          return { ...premio, cantidad: premio.cantidad }
-        }
-        return premio
-      }))
-
-      setPremiosLocalStorage(premios.map((premio, index) => {
-        if (premio.nombre === premiosOptions[newPrizeNumber].option) {
-          return { ...premio, cantidad: premio.cantidad }
+          return { ...premio, cantidad: premio.cantidad - 1 }
         }
         return premio
       }))
@@ -98,7 +91,7 @@ const Ruleta = () => {
       setShowModal(true);
     }
   }, [premios])
-  
+
   useEffect(() => {
     localStorage.setItem('premios', JSON.stringify(premios));
   }, [premios])
