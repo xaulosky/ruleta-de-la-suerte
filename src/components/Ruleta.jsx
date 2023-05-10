@@ -47,7 +47,7 @@ const Ruleta = () => {
         newPrizeNumber = Math.floor(Math.random() * (premiosOptions.length));
         console.log(premiosOptions[newPrizeNumber].option)
 
-      } while (premiosOptions[newPrizeNumber].option === 'SIGA PARTICIPANDO' || validarExistencia(newPrizeNumber) || newPrizeNumber == 0);
+      } while (premiosOptions[newPrizeNumber].option === 'SIGA PARTICIPANDO' || validarExistencia(newPrizeNumber));
 
 
       /* validar que la cantidad del premio no sea cero recuerda que el premiosOptions tiene mas valores */
@@ -68,7 +68,6 @@ const Ruleta = () => {
       /* comprueba si la cantidad de todos los premios es cero muestra de premios agotados */
       if (premios.every(premio => premio.cantidad === 0)) {
         alert("premios agotados")
-        return;
       }
     }
   }
@@ -84,6 +83,11 @@ const Ruleta = () => {
     }, 0)
     return cantidadTotal;
   }
+  /*  if (premios.every(premio => premio.cantidad === 0)) {
+     alert("premios agotados")
+     return;
+   } */
+  /* verificar si no hay premios al cerrar el modal */
 
 
 
