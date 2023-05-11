@@ -10,7 +10,7 @@ const premios = [
     {
         id: 2,
         nombre: 'STICKER',
-        cantidad: 30,
+        cantidad: 20,
     },
     {
         id: 3,

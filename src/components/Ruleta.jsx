@@ -23,18 +23,21 @@ const Ruleta = () => {
   const setPremiosLocalStorage = useStorePremios(state => state.setPremiosLocalStorage);
   /* convierte los nombres de los premios en options en un nuevo array y agrega un siga entre cada uno participando */
   const premiosOptions = premios.map((premio) => {
-    return { option: premio.nombre, style: { fontSize: 17}}
+    return { option: premio.nombre, style: { fontSize: 17, backgroundColor: "#dd5114" } }
   }).reduce((acc, curr) => {
-    return [...acc, curr, { option: /* siga participando con salto de lina */ 'SIGA PARTICIPANDO' , style: {
-      fontSize:10,
-      
-    } }]
+    return [...acc, curr, {
+      option: /* siga participando con salto de lina */ 'SIGA PARTICIPANDO', style: {
+        fontSize: 10,
+        backgroundColor: '#eeee',
+        
+
+      }
+    }]
   }, [])
 
 
   const audio = new Audio(sonidoruleta);
   const sonidoclick = new Audio(click);
-
 
   /* newPrizeNumber - 1 no deve ser SIGA PARTICIPANDO */
   const handleSpinClick = () => {
@@ -124,9 +127,7 @@ const Ruleta = () => {
       <Wheel
         mustStartSpinning={mustSpin}
         prizeNumber={prizeNumber}
-        backgroundColors={['#dd5114', '#eeee']}
         textColors={['#ffffff', '#000000']}
-        outerBorderColor={["#22130D"]}
         outerBorderWidth={[20]}
         innerBorderColor={["#f2f2f2"]}
         radiusLineColor={["transparent"]}
