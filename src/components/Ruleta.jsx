@@ -13,7 +13,6 @@ import click from '../assets/sonidos/click.mp3';
 
 const Ruleta = () => {
 
-  const cantidadSigaParticipando = 1;
 
   const [ganador, setGanador] = useState('');
   const [mustSpin, setMustSpin] = useState(false);
@@ -47,19 +46,14 @@ const Ruleta = () => {
       return;
     }
     else if (!mustSpin) {
-
       let newPrizeNumber = 2;
 
       do {
         newPrizeNumber = Math.floor(Math.random() * (premiosOptions.length));
         console.log(premiosOptions[newPrizeNumber].option)
 
-      } while (premiosOptions[newPrizeNumber].option === 'SIGA PARTICIPANDO' || validarExistencia(newPrizeNumber));
-
-
+      } while (validarExistencia(newPrizeNumber));
       /* validar que la cantidad del premio no sea cero recuerda que el premiosOptions tiene mas valores */
-
-
       setPremios(premios.map((premio, index) => {
         if (premio.nombre === premiosOptions[newPrizeNumber].option) {
           return { ...premio, cantidad: premio.cantidad - 1 }

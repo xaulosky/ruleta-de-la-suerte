@@ -4,13 +4,13 @@ const premios = [
     {
         id: 1,
         nombre: 'LLAVERO',
-        cantidad: 1,
+        cantidad: 0,
 
     },
     {
         id: 2,
         nombre: 'STICKER',
-        cantidad: 13,
+        cantidad: 7,
     },
     {
         id: 3,
@@ -20,7 +20,7 @@ const premios = [
     {
         id: 4,
         nombre: 'POSTALES',
-        cantidad: 104,
+        cantidad: 96,
     },
     {
         id: 5,
