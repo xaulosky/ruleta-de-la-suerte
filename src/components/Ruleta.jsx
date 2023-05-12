@@ -12,6 +12,9 @@ import click from '../assets/sonidos/click.mp3';
 
 
 const Ruleta = () => {
+
+  const cantidadSigaParticipando = 1;
+
   const [ganador, setGanador] = useState('');
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
@@ -29,8 +32,6 @@ const Ruleta = () => {
       option: /* siga participando con salto de lina */ 'SIGA PARTICIPANDO', style: {
         fontSize: 10,
         backgroundColor: '#eeee',
-        
-
       }
     }]
   }, [])
