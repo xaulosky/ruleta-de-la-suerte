@@ -41,11 +41,7 @@ const Ruleta = () => {
 
   /* newPrizeNumber - 1 no deve ser SIGA PARTICIPANDO */
   const handleSpinClick = () => {
-    if (comprobarCantidadTotal() <= 0) {
-      alert("premios agotados")
-      return;
-    }
-    else if (!mustSpin) {
+    if (!mustSpin) {
       let newPrizeNumber = 2;
 
       do {
@@ -66,10 +62,6 @@ const Ruleta = () => {
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
       setGanador(newPrizeNumber)
-      /* comprueba si la cantidad de todos los premios es cero muestra de premios agotados */
-      if (premios.every(premio => premio.cantidad === 0)) {
-        alert("premios agotados")
-      }
     }
   }
 
@@ -84,10 +76,7 @@ const Ruleta = () => {
     }, 0)
     return cantidadTotal;
   }
-  /*  if (premios.every(premio => premio.cantidad === 0)) {
-     alert("premios agotados")
-     return;
-   } */
+
   /* verificar si no hay premios al cerrar el modal */
 
 

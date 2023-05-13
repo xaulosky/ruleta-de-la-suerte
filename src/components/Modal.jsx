@@ -7,33 +7,57 @@ const Modal = ({ showModal, setShowModal, ganador }) => {
     return (
         <div className="modal  animate__animated animate__fadeIn">
             <div className="modal-content">
-                <h1 style={{
-                    marginBottom: '0px !important',
-                }}>¡FELICITACIONES!</h1>
-                <h1>¡GANASTE!</h1>
-                <p>Tu premio es:</p>
-                <p style={{
-                    fontSize: '3rem',
-                    fontWeight: 'bold',
-                    letterSpacing: '3px',
+                {
+                    ganador.option == 'SIGA PARTICIPANDO' ?
+                        <>
+                            <h1>SIGA PARTICIPANDO</h1>
+                            <button onClick={() => setShowModal(false)}
+                                style={{
+                                    backgroundColor: '#dd5114',
+                                    color: '#fff',
+                                    border: 'none',
+                                    padding: '10px 20px',
+                                    borderRadius: '5px',
+                                    cursor: 'pointer',
+                                    fontSize: '1.2rem',
+                                    fontWeight: 'bold',
+                                    marginTop: '20px'
 
-                }}>{ganador.option}</p>
+                                }
+                                }
+                            >Cerrar</button>
+                        </>
+                        :
+                        <>
+                            <h1 style={{
+                                marginBottom: '0px !important',
+                            }}>¡FELICITACIONES!</h1>
+                            <h1>¡GANASTE!</h1>
+                            <p>Tu premio es:</p>
+                            <p style={{
+                                fontSize: '3rem',
+                                fontWeight: 'bold',
+                                letterSpacing: '3px',
 
-                <button onClick={() => setShowModal(false)}
-                    style={{
-                        backgroundColor: '#dd5114',
-                        color: '#fff',
-                        border: 'none',
-                        padding: '10px 20px',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                        fontSize: '1.2rem',
-                        fontWeight: 'bold',
-                        marginTop: '20px'
+                            }}>{ganador.option}</p>
 
-                    }
-                    }
-                >Cerrar</button>
+                            <button onClick={() => setShowModal(false)}
+                                style={{
+                                    backgroundColor: '#dd5114',
+                                    color: '#fff',
+                                    border: 'none',
+                                    padding: '10px 20px',
+                                    borderRadius: '5px',
+                                    cursor: 'pointer',
+                                    fontSize: '1.2rem',
+                                    fontWeight: 'bold',
+                                    marginTop: '20px'
+
+                                }
+                                }
+                            >Cerrar</button>
+                        </>
+                }
             </div>
         </div >
     );
